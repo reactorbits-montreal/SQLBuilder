@@ -1,0 +1,8 @@
+title: SQLBuilder for PHP
+description: A powerful, fast, cross-platform SQL Builder for PHP. Convert your structured data into SQL queries with a fluent style interface targeting all the mainstream database (MySQL, PostgreSQL, SQLite)
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
