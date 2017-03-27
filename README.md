@@ -82,9 +82,9 @@ different query driver to the query object to get a different SQL string for
 your targettting platform.
 
 It also supports cross-platform query generation, there are three types of
-query (currently): **Universal**, **MySQL**, **PgSQL**.  The **Universal** queries are
+query (currently): **Universal**, **MySQL**, **PgSQL**, **Google BigQuery**.  The **Universal** queries are
 cross-platform, you can use them to create a cross-platform PHP API of 
-your database system, and the supported platforms are: **MySQL**, **PgSQL** and **SQLite**.
+your database system, and the supported platforms are: **MySQL**, **PgSQL**, **SQLite** and , **Google BigQuery**.
 
 Universql Queries:
 
@@ -156,7 +156,8 @@ To test with pgsql database:
 - http://www.postgresql.org/docs/8.2/static/sql-syntax.html
 - http://www.sqlite.org/optoverview.html
 
-## Author
+## Authors
 
 Yo-An Lin (c9s) <cornelius.howl@gmail.com>
+Alex Ilyenko (Assada) <assada.ua@gmail.com>
 
