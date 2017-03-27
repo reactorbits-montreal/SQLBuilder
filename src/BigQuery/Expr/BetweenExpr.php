@@ -1,20 +1,21 @@
 <?php
 
-namespace SQLBuilder\Universal\Expr;
+namespace SQLBuilder\BigQuery\Expr;
 
 use SQLBuilder\ArgumentArray;
 use SQLBuilder\Driver\BaseDriver;
 use SQLBuilder\ToSqlInterface;
 
+
 /**
  * Class BetweenExpr
  *
- * http://dev.mysql.com/doc/refman/5.0/en/comparison-operators.html#operator_between.
+ * @package SQLBuilder\BigQuery\Expr
  *
- * @package SQLBuilder\Universal\Expr
+ * @author  Aleksey Ilyenko <assada.ua@gmail.com
  *
- * @author  Yo-An Lin (c9s) <cornelius.howl@gmail.com>
- * @author  Aleksey Ilyenko <assada.ua@gmail.com>
+ * https://cloud.google.com/bigquery/docs/reference/legacy-sql#between>
+ *
  */
 class BetweenExpr implements ToSqlInterface
 {
@@ -23,16 +24,22 @@ class BetweenExpr implements ToSqlInterface
      */
     public $exprStr;
 
+    /**
+     * @var string|int
+     */
     public $min;
 
+    /**
+     * @var string|int
+     */
     public $max;
 
     /**
      * BetweenExpr constructor.
      *
-     * @param string $exprStr
-     * @param        $min
-     * @param        $max
+     * @param string     $exprStr
+     * @param string|int $min
+     * @param string|int $max
      */
     public function __construct($exprStr, $min, $max)
     {
@@ -46,6 +53,7 @@ class BetweenExpr implements ToSqlInterface
      * @param \SQLBuilder\ArgumentArray     $args
      *
      * @return string
+     * @throws \LogicException
      */
     public function toSql(BaseDriver $driver, ArgumentArray $args)
     {
@@ -55,7 +63,7 @@ class BetweenExpr implements ToSqlInterface
     /**
      * @param $array
      *
-     * @return \SQLBuilder\Universal\Expr\BetweenExpr
+     * @return \SQLBuilder\BigQuery\Expr\BetweenExpr
      */
     public static function __set_state($array)
     {
