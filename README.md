@@ -1,13 +1,5 @@
 # SQLBuilder for PHP
 
-[![Build Status](https://travis-ci.org/c9s/SQLBuilder.svg?branch=master)](http://travis-ci.org/c9s/SQLBuilder)
-[![Coverage Status](https://img.shields.io/coveralls/c9s/SQLBuilder.svg)](https://coveralls.io/r/c9s/SQLBuilder)
-[![Latest Stable Version](https://poser.pugx.org/corneltek/sqlbuilder/v/stable.svg)](https://packagist.org/packages/corneltek/sqlbuilder) 
-[![Total Downloads](https://poser.pugx.org/corneltek/sqlbuilder/downloads.svg)](https://packagist.org/packages/corneltek/sqlbuilder) 
-[![Monthly Downloads](https://poser.pugx.org/corneltek/sqlbuilder/d/monthly)](https://packagist.org/packages/corneltek/sqlbuilder)
-[![Latest Unstable Version](https://poser.pugx.org/corneltek/sqlbuilder/v/unstable.svg)](https://packagist.org/packages/corneltek/sqlbuilder) 
-[![License](https://poser.pugx.org/corneltek/sqlbuilder/license.svg)](https://packagist.org/packages/corneltek/sqlbuilder)
-
 If you're looking for something that is not an ORM but can generate SQL for
 you, you just found the right one.
 
@@ -98,9 +90,6 @@ Universql Queries:
 - CreateIndexQuery
 - DropIndexQuery
 
-To see the implementation details, you can check the source code inside **Universal** namespace:
-<https://github.com/c9s/SQLBuilder/tree/master/SQLBuilder/Universal/Query>
-
 MySQL Queries:
 
 - CreateUserQuery
@@ -117,11 +106,9 @@ For PostgreSQL platform, the implementation is according to the specification of
 
 ### Install through Composer
 
-    composer require corneltek/sqlbuilder
+    composer reactorbits-montreal/sqlbuilder
 
 ## Getting Started
-
-[Documentation](https://github.com/c9s/SQLBuilder/wiki)
 
 ## Development
 
@@ -155,9 +142,11 @@ To test with pgsql database:
 - http://dev.mysql.com/doc/refman/5.0/en/sql-syntax.html
 - http://www.postgresql.org/docs/8.2/static/sql-syntax.html
 - http://www.sqlite.org/optoverview.html
+- https://cloud.google.com/bigquery/docs/reference/standard-sql/
 
 ## Authors
 
 Yo-An Lin (c9s) <cornelius.howl@gmail.com>
+
 Alex Ilyenko (Assada) <assada.ua@gmail.com>
 
