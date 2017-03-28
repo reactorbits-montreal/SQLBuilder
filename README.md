@@ -146,7 +146,8 @@ To test with pgsql database:
 
 ## Authors
 
-Yo-An Lin (c9s) <cornelius.howl@gmail.com>
+- Yo-An Lin (c9s) <cornelius.howl@gmail.com>
+- Alex Ilyenko (Assada) <assada.ua@gmail.com>
 
 Alex Ilyenko (Assada) <assada.ua@gmail.com>
 
