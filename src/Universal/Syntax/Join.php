@@ -9,6 +9,14 @@ use SQLBuilder\Driver\MySQLDriver;
 use SQLBuilder\MySQL\Traits\IndexHintTrait;
 use SQLBuilder\ToSqlInterface;
 
+/**
+ * Class Join
+ *
+ * @package SQLBuilder\Universal\Syntax
+ *
+ * @author  Yo-An Lin (c9s) <cornelius.howl@gmail.com>
+ * @author  Aleksey Ilyenko <assada.ua@gmail.com>
+ */
 class Join implements ToSqlInterface
 {
     use IndexHintTrait;
@@ -22,6 +30,11 @@ class Join implements ToSqlInterface
      * @var null|string
      */
     public $alias;
+
+    /**
+     * @var null|string
+     */
+    public $table;
 
     /**
      * @var null|string
@@ -43,6 +56,9 @@ class Join implements ToSqlInterface
         $this->conditions = new Conditions();
     }
 
+    /**
+     * @return $this
+     */
     public function left()
     {
         $this->joinType = 'LEFT';
@@ -50,6 +66,9 @@ class Join implements ToSqlInterface
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function right()
     {
         $this->joinType = 'RIGHT';
@@ -57,6 +76,9 @@ class Join implements ToSqlInterface
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function inner()
     {
         $this->joinType = 'INNER';
@@ -64,6 +86,12 @@ class Join implements ToSqlInterface
         return $this;
     }
 
+    /**
+     * @param null|string $conditionExpr
+     * @param array       $args
+     *
+     * @return \SQLBuilder\Universal\Syntax\Conditions
+     */
     public function on($conditionExpr = null, array $args = [])
     {
         if (is_string($conditionExpr)) {
@@ -73,6 +101,12 @@ class Join implements ToSqlInterface
         return $this->conditions;
     }
 
+    /**
+     * @param \SQLBuilder\Driver\BaseDriver $driver
+     * @param \SQLBuilder\ArgumentArray     $args
+     *
+     * @return string
+     */
     public function toSql(BaseDriver $driver, ArgumentArray $args)
     {
         $sql = '';
@@ -98,6 +132,11 @@ class Join implements ToSqlInterface
         return $sql;
     }
 
+    /**
+     * @param string $alias
+     *
+     * @return $this
+     */
     public function _as($alias)
     {
         $this->alias = $alias;
@@ -105,9 +144,16 @@ class Join implements ToSqlInterface
         return $this;
     }
 
+    /**
+     * @param $m
+     * @param $a
+     *
+     * @return \SQLBuilder\Universal\Syntax\Join
+     * @throws \BadMethodCallException
+     */
     public function __call($m, $a)
     {
-        if ($m == 'as') {
+        if ($m === 'as') {
             return $this->_as($a[0]);
         }
         throw new BadMethodCallException("Invalid method call: $m");
