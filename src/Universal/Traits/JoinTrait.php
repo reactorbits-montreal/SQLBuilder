@@ -87,6 +87,27 @@ trait JoinTrait
     }
 
     /**
+     * @return array
+     */
+    public function getJoinsAsArray()
+    {
+        $joins = [];
+
+        /** @var Join $join */
+        foreach ($this->getJoins() as $join) {
+            $tableKey = $join->alias . '.' . $join->table;
+
+            $joins[$tableKey] = [
+                'alias'      => $join->alias,
+                'table'      => $join->table,
+                'conditions' => null !== $join->conditions ? $join->conditions->exprs : null
+            ];
+        }
+
+        return $joins;
+    }
+
+    /**
      * @param \SQLBuilder\Driver\BaseDriver $driver
      * @param \SQLBuilder\ArgumentArray     $args
      *
