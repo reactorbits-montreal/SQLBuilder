@@ -197,7 +197,7 @@ class SelectQuery implements ToSqlInterface
      * ->from('users', 'u').
      *
      * @param      $table
-     * @param null $alias
+     * @param null|string $alias
      *
      * @return $this
      */
