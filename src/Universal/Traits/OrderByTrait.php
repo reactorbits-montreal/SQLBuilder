@@ -31,7 +31,7 @@ trait OrderByTrait
      * > SELECT* FROM mytable ORDER BY
      *
      * @param      $byExpr
-     * @param null $sorting
+     * @param null|string $sorting
      *
      * @return $this
      */
